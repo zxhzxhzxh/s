@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		  *{
+				padding:0;margin:0;
+			}
+
+		</style>
+		<script src="ajax.js"></script>
+	</head>
+	<body >
+	</body>
+	<script>
+     //json：键值：字符串的形式
+		var obj;
+    ajax("img0.json",function(str){
+		  obj= JSON.parse(str);
+			if(obj){
+			  // console.dir(obj.src.split(","));
+				var arr= obj.src.split(",");
+				var nodes="";
+				for(var i=0;i<arr.length;i++){
+					nodes += "<img src=ajax1/"+arr[i]+" />"
+					console.log(nodes);
+				}
+				document.body.innerHTML= nodes;
+			}
+		});		
+		
+	</script>
+</html>
